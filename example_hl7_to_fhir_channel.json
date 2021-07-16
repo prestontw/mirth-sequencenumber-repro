@@ -5,7 +5,7 @@
     "nextMetaDataId": 2,
     "name": "Convert HL7 to FHIR Patient - Example 1",
     "description": null,
-    "revision": 7,
+    "revision": 2,
     "sourceConnector": {
       "@version": "3.11.0",
       "metaDataId": 0,
@@ -1432,6 +1432,7 @@
           "com.mirth.connect.plugins.javascriptstep.JavaScriptStep": [
             {
               "@version": "3.11.0",
+              "name": "Intermediate js logging step",
               "sequenceNumber": 1,
               "enabled": true,
               "script": "logger.info(\"intermediate break between iterators\");"
@@ -1938,7 +1939,7 @@
       "metadata": {
         "enabled": true,
         "lastModified": {
-          "time": 1626465839749,
+          "time": 1626469746759,
           "timezone": "America/New_York"
         },
         "pruningSettings": {
