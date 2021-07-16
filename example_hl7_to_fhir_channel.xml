@@ -3,7 +3,7 @@
   <nextMetaDataId>2</nextMetaDataId>
   <name>Convert HL7 to FHIR Patient - Example 1</name>
   <description></description>
-  <revision>1</revision>
+  <revision>7</revision>
   <sourceConnector version="3.11.0">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -165,9 +165,14 @@
             </children>
           </properties>
         </com.mirth.connect.model.IteratorStep>
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
+          <sequenceNumber>1</sequenceNumber>
+          <enabled>true</enabled>
+          <script>logger.info(&quot;intermediate break between iterators&quot;);</script>
+        </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;PID&apos;][&apos;PID.5&apos;]</name>
-          <sequenceNumber>1</sequenceNumber>
+          <sequenceNumber>2</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;PID&apos;][&apos;PID.5&apos;]</target>
@@ -179,7 +184,7 @@
             <children>
               <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                 <name>Create HumanName</name>
-                <sequenceNumber>1-0</sequenceNumber>
+                <sequenceNumber>2-0</sequenceNumber>
                 <enabled>true</enabled>
                 <storeAsLocal>true</storeAsLocal>
                 <mapType>CHANNEL</mapType>
@@ -297,7 +302,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;PID&apos;][&apos;PID.9&apos;]</name>
-          <sequenceNumber>2</sequenceNumber>
+          <sequenceNumber>3</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;PID&apos;][&apos;PID.9&apos;]</target>
@@ -309,7 +314,7 @@
             <children>
               <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                 <name>Create HumanName</name>
-                <sequenceNumber>2-0</sequenceNumber>
+                <sequenceNumber>3-0</sequenceNumber>
                 <enabled>true</enabled>
                 <storeAsLocal>true</storeAsLocal>
                 <mapType>CHANNEL</mapType>
@@ -427,7 +432,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;PID&apos;][&apos;PID.13&apos;]</name>
-          <sequenceNumber>3</sequenceNumber>
+          <sequenceNumber>4</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;PID&apos;][&apos;PID.13&apos;]</target>
@@ -439,7 +444,7 @@
             <children>
               <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                 <name>Create ContactPoint</name>
-                <sequenceNumber>3-0</sequenceNumber>
+                <sequenceNumber>4-0</sequenceNumber>
                 <enabled>true</enabled>
                 <storeAsLocal>true</storeAsLocal>
                 <mapType>CHANNEL</mapType>
@@ -487,7 +492,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;PID&apos;][&apos;PID.14&apos;]</name>
-          <sequenceNumber>4</sequenceNumber>
+          <sequenceNumber>5</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;PID&apos;][&apos;PID.14&apos;]</target>
@@ -499,7 +504,7 @@
             <children>
               <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                 <name>Create ContactPoint</name>
-                <sequenceNumber>4-0</sequenceNumber>
+                <sequenceNumber>5-0</sequenceNumber>
                 <enabled>true</enabled>
                 <storeAsLocal>true</storeAsLocal>
                 <mapType>CHANNEL</mapType>
@@ -547,7 +552,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;PID&apos;][&apos;PID.11&apos;]</name>
-          <sequenceNumber>5</sequenceNumber>
+          <sequenceNumber>6</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;PID&apos;][&apos;PID.11&apos;]</target>
@@ -559,7 +564,7 @@
             <children>
               <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                 <name>Create Address</name>
-                <sequenceNumber>5-0</sequenceNumber>
+                <sequenceNumber>6-0</sequenceNumber>
                 <enabled>true</enabled>
                 <storeAsLocal>true</storeAsLocal>
                 <mapType>CHANNEL</mapType>
@@ -707,7 +712,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;NK1&apos;]</name>
-          <sequenceNumber>6</sequenceNumber>
+          <sequenceNumber>7</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;NK1&apos;]</target>
@@ -719,7 +724,7 @@
             <children>
               <com.mirth.connect.model.IteratorStep version="3.11.0">
                 <name>For each msg[&apos;NK1&apos;][i][&apos;NK1.5&apos;]</name>
-                <sequenceNumber>6-0</sequenceNumber>
+                <sequenceNumber>7-0</sequenceNumber>
                 <enabled>true</enabled>
                 <properties>
                   <target>msg[&apos;NK1&apos;][i][&apos;NK1.5&apos;]</target>
@@ -731,7 +736,7 @@
                   <children>
                     <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                       <name>Create ContactPoint</name>
-                      <sequenceNumber>6-0-0</sequenceNumber>
+                      <sequenceNumber>7-0-0</sequenceNumber>
                       <enabled>true</enabled>
                       <storeAsLocal>true</storeAsLocal>
                       <mapType>CHANNEL</mapType>
@@ -782,7 +787,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;NK1&apos;]</name>
-          <sequenceNumber>7</sequenceNumber>
+          <sequenceNumber>8</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;NK1&apos;]</target>
@@ -794,7 +799,7 @@
             <children>
               <com.mirth.connect.model.IteratorStep version="3.11.0">
                 <name>For each msg[&apos;NK1&apos;][i][&apos;NK1.6&apos;]</name>
-                <sequenceNumber>7-0</sequenceNumber>
+                <sequenceNumber>8-0</sequenceNumber>
                 <enabled>true</enabled>
                 <properties>
                   <target>msg[&apos;NK1&apos;][i][&apos;NK1.6&apos;]</target>
@@ -806,7 +811,7 @@
                   <children>
                     <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                       <name>Create ContactPoint</name>
-                      <sequenceNumber>7-0-0</sequenceNumber>
+                      <sequenceNumber>8-0-0</sequenceNumber>
                       <enabled>true</enabled>
                       <storeAsLocal>true</storeAsLocal>
                       <mapType>CHANNEL</mapType>
@@ -857,7 +862,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.model.IteratorStep version="3.11.0">
           <name>For each msg[&apos;NK1&apos;]</name>
-          <sequenceNumber>8</sequenceNumber>
+          <sequenceNumber>9</sequenceNumber>
           <enabled>true</enabled>
           <properties>
             <target>msg[&apos;NK1&apos;]</target>
@@ -869,7 +874,7 @@
             <children>
               <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
                 <name>Create Patient_Contact</name>
-                <sequenceNumber>8-0</sequenceNumber>
+                <sequenceNumber>9-0</sequenceNumber>
                 <enabled>true</enabled>
                 <storeAsLocal>true</storeAsLocal>
                 <mapType>CHANNEL</mapType>
@@ -1219,7 +1224,7 @@
         </com.mirth.connect.model.IteratorStep>
         <com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep version="3.11.0">
           <name>Create Patient</name>
-          <sequenceNumber>9</sequenceNumber>
+          <sequenceNumber>10</sequenceNumber>
           <enabled>true</enabled>
           <storeAsLocal>true</storeAsLocal>
           <mapType>CHANNEL</mapType>
@@ -1405,9 +1410,32 @@
         </com.mirth.connect.plugins.fhir.shared.FhirModelBuilderTransformerStep>
         <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.11.0">
           <name>Cleanup, and set msg</name>
-          <sequenceNumber>10</sequenceNumber>
+          <sequenceNumber>11</sequenceNumber>
           <enabled>true</enabled>
-          <script>msg = consolidate(cleanupFhirPatient(patient));</script>
+          <script>logger.info(&quot;hello&quot;);
+for each (descendant in msg.descendants()) {
+	logger.info(&quot;descendant: &quot; + descendant.toString());
+	var name = descendant.name();
+	if (name) {
+	logger.info(&quot;descendant = &quot; + descendant.name().toString()); 
+	}
+}
+for each (child in msg.children()) {
+	logger.info(&quot;child: &quot; + child.toString());
+	var name = child.name();
+	if (name) {
+	logger.info(&quot;child = &quot; + child.name().toString());
+	}
+}
+for each (descendant in msg[&apos;INSURANCE&apos;].descendants()) {
+	logger.info(&quot;descendant: &quot; + descendant.toString());
+	var name = descendant.name();
+	if (name) {
+		logger.info(&quot;descendant.name(): &quot; + name.toString());
+	}
+}
+
+msg = consolidate(cleanupFhirPatient(patient));</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
       </elements>
       <inboundTemplate encoding="base64"></inboundTemplate>
@@ -1623,7 +1651,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1624392584229</time>
+        <time>1626465839749</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <pruningSettings>
@@ -1636,7 +1664,7 @@ return;</undeployScript>
         <name>HL7 v2.x to FHIR Helper Functions</name>
         <revision>1</revision>
         <lastModified>
-          <time>1624392570081</time>
+          <time>1624478612963</time>
           <timezone>Etc/UTC</timezone>
         </lastModified>
         <description>General functions to help convert HL7 v2.x to FHIR resources.
@@ -1654,15 +1682,15 @@ the &quot;HL7 v2.x to FHIR Creation Functions&quot; code template library.</desc
             <name>Cleanup FHIR Patient</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570859</time>
+              <time>1624478613447</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -1749,15 +1777,15 @@ function cleanupArray(parent, property, handleFunction) {
             <name>Combine Arrays</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570711</time>
+              <time>1624478613321</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -1795,15 +1823,15 @@ function combineArrays(array1, array2) {
             <name>Consolidate Empty Properties</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392571071</time>
+              <time>1624478613630</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -1888,15 +1916,15 @@ function isValueEmpty(value) {
             <name>Convert Address Use</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570465</time>
+              <time>1624478613209</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -1941,15 +1969,15 @@ function convertAddressUse(code) {
             <name>Convert Date</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570136</time>
+              <time>1624478613000</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -1974,15 +2002,15 @@ function convertToFhirDate(date) {
             <name>Convert Gender</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570628</time>
+              <time>1624478613283</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -2023,15 +2051,15 @@ function convertToFhirGender(code) {
             <name>Convert Timestamp</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570323</time>
+              <time>1624478613146</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
@@ -2087,15 +2115,15 @@ function convertToFhirTimestamp(date) {
             <name>Convert Yes/No Indicator</name>
             <revision>1</revision>
             <lastModified>
-              <time>1624392570961</time>
+              <time>1624478613527</time>
               <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>SOURCE_RECEIVER</contextType>
               </delegate>
             </contextSet>
