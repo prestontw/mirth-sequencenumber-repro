@@ -1,0 +1,13 @@
+# Docker compose to run mirth server locally.
+# Note that you will need to run the Mirth Connect Administrator separately.
+---
+version: "3"
+services:
+  mirth:
+    build: .
+    ports:
+      - 8443:8443 # This is the admin port
+      - 6661:6661 # This is the HL7v2 channel port
+    volumes:
+      # Store data in local directory so that it is persisted.
+      - ./appdata:/opt/connect/appdata
