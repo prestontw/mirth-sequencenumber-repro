@@ -7,4 +7,4 @@ if [[ -z "$channelid" ]]; then
   exit 1
 fi
 
-curl -k -u admin:admin -X GET "https://localhost:8443/api/channels/$channelid" -H  "accept: application/xml" > saved-channel.xml
+curl -k -u admin:admin -X GET "https://localhost:8443/api/channels/$channelid" -H  "accept: application/json" > example_hl7_to_fhir_channel.json
