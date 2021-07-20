@@ -1413,7 +1413,30 @@
           <name>Cleanup, and set msg</name>
           <sequenceNumber>11</sequenceNumber>
           <enabled>true</enabled>
-          <script>logger.info(&quot;hello&quot;);for each (descendant in msg.descendants()) {	logger.info(&quot;descendant: &quot; + descendant.toString());	var name = descendant.name();	if (name) {	logger.info(&quot;descendant = &quot; + descendant.name().toString()); 	}}for each (child in msg.children()) {	logger.info(&quot;child: &quot; + child.toString());	var name = child.name();	if (name) {	logger.info(&quot;child = &quot; + child.name().toString());	}}for each (descendant in msg[&apos;INSURANCE&apos;].descendants()) {	logger.info(&quot;descendant: &quot; + descendant.toString());	var name = descendant.name();	if (name) {		logger.info(&quot;descendant.name(): &quot; + name.toString());	}}msg = consolidate(cleanupFhirPatient(patient));</script>
+          <script>logger.info(&quot;hello&quot;);
+for each (descendant in msg.descendants()) {
+	logger.info(&quot;descendant: &quot; + descendant.toString());
+	var name = descendant.name();
+	if (name) {
+	logger.info(&quot;descendant = &quot; + descendant.name().toString()); 
+	}
+}
+for each (child in msg.children()) {
+	logger.info(&quot;child: &quot; + child.toString());
+	var name = child.name();
+	if (name) {
+	logger.info(&quot;child = &quot; + child.name().toString());
+	}
+}
+for each (descendant in msg[&apos;INSURANCE&apos;].descendants()) {
+	logger.info(&quot;descendant: &quot; + descendant.toString());
+	var name = descendant.name();
+	if (name) {
+		logger.info(&quot;descendant.name(): &quot; + name.toString());
+	}
+}
+
+msg = consolidate(cleanupFhirPatient(patient));</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
       </elements>
       <inboundTemplate encoding="base64"></inboundTemplate>
@@ -1582,10 +1605,17 @@
       <waitForPrevious>true</waitForPrevious>
     </connector>
   </destinationConnectors>
-  <preprocessingScript>// Modify the message variable below to pre process datareturn message;</preprocessingScript>
-  <postprocessingScript>// This script executes once after a message has been processed// Responses returned from here will be stored as &quot;Postprocessor&quot; in the response mapreturn;</postprocessingScript>
-  <deployScript>// This script executes once when the channel is deployed// You only have access to the globalMap and globalChannelMap here to persist datareturn;</deployScript>
-  <undeployScript>// This script executes once when the channel is undeployed// You only have access to the globalMap and globalChannelMap here to persist datareturn;</undeployScript>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+// Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <undeployScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</undeployScript>
   <properties version="3.11.0">
     <clearGlobalChannelMap>true</clearGlobalChannelMap>
     <messageStorageMode>DEVELOPMENT</messageStorageMode>
@@ -1622,7 +1652,7 @@
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1626730636498</time>
+        <time>1626795436261</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <pruningSettings>
